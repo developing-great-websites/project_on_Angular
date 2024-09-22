@@ -1,0 +1,53 @@
+<div class="request">
+  <button class="close" (click)="dialogRef.close()">
+    <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <line x1="1.93562" y1="2.6499" x2="13.9564" y2="14.6707" stroke="#BEBEBE" stroke-linecap="round"/>
+      <line x1="13.9236" y1="2.62971" x2="1.90277" y2="14.6505" stroke="#BEBEBE" stroke-linecap="round"/>
+    </svg>
+  </button>
+  <ng-container *ngIf="!isSuccess; else thanks">
+    <div class="modal-title">{{modalTitle}}</div>
+    <form [formGroup]="requestForm">
+      <div class="modal-inputs">
+        <div class="modal-input" *ngIf="isService">
+          <select class="input"
+                  [ngStyle]="{'border-color' : category?.hasError('required') && category?.touched ? 'red' : ''}"
+                  formControlName="category">
+            <option>Создание сайтов</option>
+            <option>Продвижение</option>
+            <option>Реклама</option>
+            <option>Копирайтинг</option>
+          </select>
+        </div>
+        <div class="modal-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color' : name?.hasError('required') && name?.touched ? 'red' : ''}"
+                 placeholder="Ваше имя" formControlName="name">
+          <div class="input-error" *ngIf="name?.hasError('required') && name?.touched">Поле обязатально для заполнения
+          </div>
+        </div>
+        <div class="modal-input">
+          <input type="text" prefix="+7 " mask="(000) 000 00 00" class="input"
+                 [ngStyle]="{'border-color' : phone?.hasError('required') && phone?.touched ? 'red' : ''}"
+                 placeholder="Ваш номер телефона" formControlName="phone">
+          <div class="input-error" *ngIf="phone?.hasError('required') && phone?.touched">Поле обязатально для заполнения</div>
+        </div>
+      </div>
+      <div class="modal-button">
+        <button class="button" [disabled]="requestForm.invalid" (click)="request()">{{modalButton}}</button>
+        <div class="error" *ngIf="isError">Произошла ошибка при отправке формы, попробуйте еще раз.</div>
+      </div>
+    </form>
+  </ng-container>
+
+  <ng-template #thanks>
+    <div class="thanks-info">
+      <div class="modal-title thanks">Спасибо за вашу заявку!</div>
+      <div class="modal-text">Мы свяжемся с вами при первой же возможности.</div>
+      <div class="success-button">
+        <button class="button" (click)="dialogRef.close()">Окей</button>
+      </div>
+    </div>
+  </ng-template>
+
+</div>

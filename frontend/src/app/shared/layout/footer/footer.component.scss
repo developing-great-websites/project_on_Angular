@@ -1,0 +1,115 @@
+@import "../../../../assets/styles/variables";
+
+footer.footer {
+  padding: 40px 0 54px;
+  background-color: #B9D5FD;
+
+  .container {
+    font-size: 16px;
+
+    .footer-menu {
+      display: flex;
+      align-items: center;
+
+      .logo {
+        margin-right: 40px;
+      }
+
+      nav ul {
+        margin: 0;
+        padding: 0;
+        display: flex;
+
+        li {
+          margin-right: 20px;
+          list-style: none;
+          border-bottom: 1px solid transparent;
+
+          a {
+            color: $base-text-color;
+            cursor: pointer;
+            text-decoration: none;
+          }
+        }
+      }
+    }
+
+    .footer-contact {
+      padding: 40px 0 6px;
+      display: flex;
+
+      .footer-block {
+        margin-right: 60px;
+
+        .footer-head {
+          font-family: "Montserrat", sans-serif;
+          font-weight: 500;
+          color: $blue-text-color;
+          margin-bottom: 10px;
+        }
+
+        .footer-info {
+          color: $base-text-color;
+        }
+
+        &.footer-address {
+          max-width: 253px;
+
+          .footer-info {
+            line-height: 21px;
+          }
+        }
+
+        &.footer-phone {
+          .footer-info {
+            margin-bottom: 10px;
+
+            a {
+              text-decoration: none;
+              color: $base-text-color;
+            }
+          }
+
+          .footer-button {
+            padding: 10px;
+            width: 153px;
+            box-sizing: border-box;
+            font-size: 12px;
+          }
+        }
+
+        &.footer-email {
+          .footer-info {
+            font-size: 14px;
+
+            a {
+              text-decoration: none;
+              color: $base-text-color;
+            }
+          }
+        }
+
+        &.footer-socials {
+
+          .footer-head {
+            margin-bottom: 15px;
+          }
+
+          .footer-icons {
+            display: flex;
+            align-items: center;
+
+            a {
+              margin-right: 12px;
+            }
+          }
+        }
+      }
+    }
+
+    .footer-text {
+      color: $blue-text-color;
+    }
+  }
+}
+

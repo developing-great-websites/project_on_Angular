@@ -1,0 +1,88 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.comment-article {
+  margin-bottom: 40px;
+
+  .comment-article-user {
+    display: flex;
+    align-items: start;
+    margin-bottom: 15px;
+
+    .comment-article-user-image {
+      margin-right: 26px;
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid $blue-text-color;
+      background-color: #B9D5FD;
+    }
+
+    .comment-article-user-info {
+
+      .comment-article-user-info-name {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 18px;
+        font-weight: 600;
+        color: $blue-text-color;
+        margin-bottom: 10px;
+      }
+
+      .comment-article-user-info-date {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: #BEBEBE;
+      }
+    }
+  }
+
+  .comment-article-text {
+    width: 854px;
+    font-size: 14px;
+    line-height: 19.6px;
+    color: $base-text-color;
+    margin-bottom: 39px;
+  }
+
+  .comment-article-actions {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+
+    .likes {
+      display: flex;
+      align-items: center;
+
+      .likes-count {
+        min-width: 20px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 600;
+        color: $base-text-color;
+        margin-right: 3px;
+      }
+
+      .icon {
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      &.active {
+        .likes-count {
+          color: $blue-text-color;
+        }
+
+        .icon {
+          svg {
+            path {
+              stroke: $blue-text-color;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+

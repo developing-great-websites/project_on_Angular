@@ -1,0 +1,90 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.request {
+  width: 727px;
+  height: 489px;
+  background-color: #FFFFFF;
+  border-radius: 10px;
+  border: 2px solid $blue-text-color;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  position: relative;
+
+  .close {
+    position: absolute;
+    top: 30px;
+    right: 30px;
+    border: 0;
+    background: transparent;
+  }
+
+  .modal-title {
+    width: 422px;
+    @include head-lora-38;
+    margin-bottom: 20px;
+  }
+
+  form {
+    .modal-inputs {
+      .modal-input {
+        margin-bottom: 5px;
+
+        select {
+          width: 100%;
+          outline: none;
+        }
+
+        input {
+          width: 100%;
+        }
+
+        &:last-child {
+          margin-bottom: 20px;
+        }
+      }
+    }
+
+    .modal-button {
+      .button {
+        width: 100%;
+      }
+
+      .error {
+        color: red;
+        font-size: 14px;
+        margin-top: 10px;
+      }
+    }
+
+  }
+
+  .thanks-info {
+    width: 100%;
+
+    .thanks {
+      text-align: center;
+      width: 100%;
+    };
+
+    .modal-text {
+      font-family: "Montserrat", sans-serif;
+      font-size: 14px;
+      font-weight: 500;
+      color: $gray-text-color;
+      margin-bottom: 40px;
+    }
+
+    .success-button {
+
+      button {
+        width: 73px;
+      }
+    }
+  }
+
+}

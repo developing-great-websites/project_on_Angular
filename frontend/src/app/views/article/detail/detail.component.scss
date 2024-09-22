@@ -1,0 +1,202 @@
+@import "../../../../assets/styles/variables";
+@import "../../../../assets/styles/mixins";
+
+.detail {
+  padding-top: 80px;
+  padding-bottom: 120px;
+
+  .container {
+    .breadcrumbs {
+      margin-bottom: 60px;
+      display: flex;
+
+      a {
+        font-size: 16px;
+        color: #B9D5FD;
+        text-decoration: none;
+      }
+
+      .article-title {
+        margin-left: 8px;
+        font-family: 'Montserrat', sans-serif;
+        font-size: 16px;
+        font-weight: 500;
+        line-height: 20.8px;
+        color: $blue-text-color;
+      }
+    }
+
+    .detail-main {
+      display: flex;
+      align-items: start;
+      justify-content: space-between;
+      margin-bottom: 60px;
+
+      .detail-main-info {
+        max-width: 607px;
+        margin-right: 106px;
+
+        .detail-main-title {
+          @include head-lora-38;
+          line-height: 49.4px;
+          margin-bottom: 40px;
+        }
+
+        .detail-main-text {
+          font-size: 20px;
+          line-height: 26px;
+          color: $blue-text-color;
+        }
+
+      }
+
+      .detail-main-image {
+        width: 527px;
+        height: 320px;
+        background-size: cover;
+        background-position: center;
+        border-radius: 5px;
+      }
+    }
+
+    .detail-content {
+      display: flex;
+      justify-content: space-between;
+
+      .detail-article-text {
+        width: 818px;
+        margin-bottom: 60px;
+      }
+
+      .detail-another-articles {
+
+        .detail-another-articles-title {
+          font-family: 'Lora', sans-serif;
+          font-size: 26px;
+          font-weight: 400;
+          color: $blue-text-color;
+          margin-bottom: 20px;
+        }
+
+        .detail-another-articles-items {
+          display: flex;
+          flex-direction: column;
+
+          .first {
+            margin-bottom: 60px;
+          }
+        }
+      }
+    }
+
+    .detail-socials {
+      display: flex;
+      align-items: center;
+      margin-bottom: 60px;
+
+      .detail-socials-text {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 14px;
+        font-weight: 500;
+        color: $blue-text-color;
+        margin-right: 20px;
+      }
+
+      .detail-socials-icons {
+        display: flex;
+        align-items: center;
+
+        a {
+          cursor: pointer;
+          margin-right: 13px;
+        }
+
+        svg {
+          display: flex;
+        }
+      }
+    }
+
+    .detail-comment {
+
+      .detail-comment-title {
+        @include head-lora-38;
+        margin-bottom: 20px;
+      }
+
+      .detail-comment-auth {
+        font-size: 14px;
+        color: $base-text-color;
+        margin-bottom: 60px;
+
+        a {
+          text-decoration: none;
+          cursor: pointer;
+          color: $blue-text-color;
+        }
+      }
+
+      .detail-comment-text {
+        font-size: 14px;
+        color: $base-text-color;
+        margin-bottom: 40px;
+      }
+
+      .detail-form {
+
+        .detail-form-input {
+          width: 100%;
+          margin-top: 20px;
+          margin-bottom: 20px;
+
+          textarea {
+            &::placeholder {
+              font-size: 14px;
+              color: #A8ABA7;
+            }
+          }
+        }
+
+        .detail-comment-action {
+          button {
+            width: 422px;
+          }
+        }
+      }
+    }
+
+    .comments {
+      margin-top: 60px;
+      margin-bottom: 120px;
+
+      .detail-comment-absent {
+        font-family: 'Montserrat', sans-serif;
+        font-size: 20px;
+        font-weight: 500;
+        color: $blue-text-color;
+      }
+
+      .comments-more {
+        margin-top: 60px;
+        display: flex;
+        align-items: center;
+        text-decoration: none;
+        cursor: pointer;
+
+        .comments-more-text {
+          font-family: 'Montserrat', sans-serif;
+          font-size: 20px;
+          font-weight: 500;
+          color: $blue-text-color;
+          margin-right: 10px;
+        }
+
+        .comments-more-icon {
+          display: flex;
+        }
+      }
+    }
+  }
+}
+
+

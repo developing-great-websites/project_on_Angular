@@ -1,0 +1,35 @@
+<section class="login auth-content" [formGroup]="loginForm">
+  <div class="container">
+    <div class="auth-form">
+      <div class="auth-title">Войти в личный кабинет</div>
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color' : email?.hasError('required') && email?.touched ? 'red' : ''}"
+                 placeholder="Электронная почта" formControlName="email">
+          <div class="input-error" *ngIf="email?.hasError('required') && email?.touched">Поле обязатально для заполнения</div>
+          <div class="input-error" *ngIf="email?.hasError('email')">Некорректный Email</div>
+        </div>
+        <div class="auth-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color' : password?.hasError('required') && password?.touched ? 'red' : ''}"
+                 placeholder="Пароль" formControlName="password">
+          <div class="input-error" *ngIf="password?.hasError('required') && password?.touched">Поле обязатально для заполнения</div>
+        </div>
+      <div class="auth-checkbox login-checkbox">
+        <input type="checkbox" id="remember" formControlName="rememberMe" class="checkbox">
+          <label for="remember">Запомнить меня</label>
+        </div>
+      </div>
+      <div class="auth-button">
+        <button class="button" [disabled]="loginForm.invalid" (click)="login()">Войти</button>
+      </div>
+      <div class="auth-link">
+        Нет аккаунта? <a routerLink="/signup">Пройдите регистрацию</a>
+      </div>
+    </div>
+    <div class="page-image">
+      <img src="/assets/images/page/login.png" alt="user">
+    </div>
+  </div>
+</section>

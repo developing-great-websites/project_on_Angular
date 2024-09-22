@@ -1,0 +1,54 @@
+<section class="signup auth-content">
+  <div class="container">
+    <form class="auth-form" [formGroup]="signupForm">
+      <div class="auth-title">Регистрация на сайте</div>
+      <div class="auth-inputs">
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color' : name?.hasError('required') && name?.touched ? 'red' : ''}"
+                 placeholder="Ваше имя" formControlName="name">
+          <div class="input-error" *ngIf="name?.hasError('required') && name?.touched">Поле обязатально для заполнения
+          </div>
+          <div class="input-error" *ngIf="name?.hasError('pattern')">Некорректное имя. Может содержать русские буквы и
+            пробелы. Каждое новое слово - с большой буквы.
+          </div>
+        </div>
+        <div class="auth-input">
+          <input type="text" class="input"
+                 [ngStyle]="{'border-color' : email?.hasError('required') && email?.touched ? 'red' : ''}"
+                 placeholder="Электронная почта" formControlName="email">
+          <div class="input-error" *ngIf="email?.hasError('required') && email?.touched">Поле обязатально для заполнения</div>
+          <div class="input-error" *ngIf="email?.hasError('email')">Некорректный Email</div>
+        </div>
+        <div class="auth-input">
+          <input type="password" class="input"
+                 [ngStyle]="{'border-color' : password?.hasError('required') && password?.touched ? 'red' : ''}"
+                 placeholder="Пароль" formControlName="password">
+          <div class="input-error" *ngIf="password?.hasError('required') && password?.touched">Поле обязатально для заполнения</div>
+          <div class="input-error" *ngIf="password?.hasError('pattern')">Пароль должен быть не менее 8 символов,
+            содержать как минимум 1 букву в верхнем регистре и как минимум 1 цифру
+          </div>
+        </div>
+        <div class="auth-checkbox">
+          <input type="checkbox" id="agree" formControlName="agree">
+          <label for="agree">
+            Я принимаю <a routerLink="/policy" fragment="termsAgreement" target="_blank" rel="noopener noreferrer">условия
+            пользовательского соглашения</a> и даю <a routerLink="/policy" fragment="agreeForPersonalData"
+                                                      target="_blank" rel="noopener noreferrer">согласие на обработку
+            персональных данных</a>.
+          </label>
+        </div>
+      </div>
+      <div class="auth-button">
+        <button class="button" [disabled]="signupForm.invalid" (click)="signup()">Зарегистрироваться</button>
+      </div>
+      <div class="auth-link">
+        Уже есть аккаунт? <a routerLink="/login">Войдите</a>
+      </div>
+    </form>
+    <div class="page-image">
+      <img src="/assets/images/page/signup.png" alt="user">
+    </div>
+  </div>
+</section>
+

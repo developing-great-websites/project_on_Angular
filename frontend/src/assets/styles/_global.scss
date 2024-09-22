@@ -1,0 +1,133 @@
+@import "variables";
+@import "mixins";
+
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+}
+
+.container {
+  max-width: $container-width;
+  margin: 0 auto;
+}
+
+form {
+  width: 422px;
+}
+
+.input {
+  box-sizing: border-box;
+  padding: 17px 20px;
+  border: 2px solid $blue-text-color;
+  border-radius: 3px;
+  font-family: "Montserrat", sans-serif;
+  font-size: 14px;
+  font-weight: 400;
+  color: $base-text-color;
+  outline: none;
+}
+
+.input-error {
+  color: red;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: start;
+}
+
+.button {
+  text-align: center;
+  padding: 15px;
+  background: #709FDC;
+  border-radius: 5px;
+  box-sizing: border-box;
+  cursor: pointer;
+  border: 0;
+  font-family: "Montserrat", sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  color: #FFFFFF;
+
+  &:disabled {
+    background: grey;
+    cursor: not-allowed;
+  }
+
+  &.button-transparent {
+    background-color: transparent;
+    border: 1px solid #709FDC;
+    color: $blue-text-color;
+  }
+}
+
+.mat-menu-item {
+  font-family: "Montserrat", sans-serif;
+  font-weight: 400;
+
+  a {
+    text-decoration: none;
+    color: $base-text-color;
+  }
+}
+
+owl-carousel-o {
+  position: relative;
+
+  .owl-theme {
+    .owl-dots {
+      position: absolute;
+      left: calc(50% - 35px);
+      bottom: 20px;
+      margin-top: 0;
+
+      .owl-dot {
+        span {
+          background: transparent;
+          border: 1px solid #FFFFFF;
+        }
+
+        &.active {
+          span {
+            background-color: #FFFFFF;
+          }
+        }
+      }
+    }
+  }
+}
+
+.detail-content {
+  .detail-article-text {
+
+    h1 {
+      @include head-lora-38;
+    }
+
+    h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 20px;
+      font-weight: 500;
+      line-height: 26px;
+      color: $blue-text-color;
+      margin-bottom: 20px;
+    }
+
+    p,
+    ul,
+    ol {
+      font-size: 14px;
+      line-height: 18.2px;
+      color: $base-text-color;
+      margin-bottom: 20px;
+    }
+
+    ul,
+    ol {
+      padding-left: 20px;
+    }
+  }
+}
+
+
+
